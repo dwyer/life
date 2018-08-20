@@ -1,5 +1,6 @@
 #include <SDL2/SDL.h>
 #include <stdbool.h>
+#include <assert.h>
 
 #define POW_2 9
 /* #define WRAP */
@@ -225,6 +226,45 @@ void load_life_file(FILE *fp, board_t board, dim_t x, dim_t y)
     }
 }
 
+void load_rle(FILE *fp, board_t board, dim_t x, dim_t y)
+{
+    int ch;
+    bool in_comment = false;
+    bool in_header = true;
+    int run = 0;
+    dim_t dx = 0;
+    dim_t dy = 0;
+    while ((ch = fgetc(fp)) != EOF) {
+        if (in_comment) {
+            in_comment = ch != '\n';
+        } else if (ch == '#') {
+            in_comment = true;
+        } else if (in_header) {
+            in_header = ch != '\n';
+        } else if (isdigit(ch)) {
+            run = run * 10 + ch - '0';
+        } else if (ch == 'b' || ch == 'o' || ch == '$') {
+            if (!run)
+                run = 1;
+            while (run) {
+                if (ch == '$') {
+                    dx = 0;
+                    ++dy;
+                } else {
+                    set_cell(board, x+dx, y+dy, ch == 'o');
+                    ++dx;
+                }
+                --run;
+            }
+        } else if (isspace(ch)) {
+        } else if (ch == '!') {
+            break;
+        } else {
+            panic("Couldn't parse RLE file.");
+        }
+    }
+}
+
 void copy_board(const board_t from, board_t to)
 {
     FOR_XY(x, y) set_cell(to, x, y, get_cell(from, x, y));
@@ -251,9 +291,20 @@ int main(int argc, char *argv[])
     Uint32 startTime = 0;
     int frame = 0;
 
-    if (argc > 1) {
-        for (int i = 1; i < argc; ++i) {
-            FILE *fp = fopen(argv[i], "r");
+    while (--argc) {
+        ++argv;
+        if (!strcmp(*argv, "--rle")) {
+            assert(--argc);
+            ++argv;
+            FILE *fp = fopen(*argv, "r");
+            assert(fp);
+            load_rle(fp, CURRENT_BOARD, w/2, h/2);
+            fclose(fp);
+        } else if (!strcmp(*argv, "--life")) {
+            assert(--argc);
+            ++argv;
+            FILE *fp = fopen(*argv, "r");
+            assert(fp);
             load_life_file(fp, CURRENT_BOARD, w/2, h/2);
             fclose(fp);
         }
