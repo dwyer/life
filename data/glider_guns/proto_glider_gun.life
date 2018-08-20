@@ -1,0 +1,22 @@
+# description: <a href="http://en.wikipedia.org/wiki/Gun_(cellular_automaton)">Proto glider gun</a>
+                                   o.
+                                  .O o
+ o.                    O o         OO
+.O o                   Oo.          ...
+ OO      O o           .O            OOo
+  ...    Oo.            ..           O .
+   OOo   .O             OO            o
+   O .    ..           .O o  .O
+    o     OO            o.   Oo.
+         .O o  .O            O o
+          o.   Oo.   OO
+               O o  .O o
+                     O.
+                                        OO
+                                       .O o
+                                        O.
+
+                              .
+                             OOo
+                             O .
+                              o

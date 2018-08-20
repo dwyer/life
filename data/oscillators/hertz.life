@@ -1,0 +1,18 @@
+# description: <a href="http://en.wikipedia.org/wiki/Oscillator_(cellular_automaton)">Hertz oscillator</a>
+      OO     OO     OO     OO
+      OO     OO     OO     OO
+
+ OO   OOOO   OOOO   OOOO   OOOO   OO
+ O O O  . O O  o O O    O O    O O O
+   O OO  .O OO..oO OoOo O O o .O O
+ O O O  . O O  o O O    O O    O O O
+ OO   OOOO   OOOO   OOOO   OOOO   OO
+
+ OO   OOOO   OOOO   OOOO   OOOO   OO
+ O O O    O O    O O o  O O .  O O O
+   O O. o O O oOoO Oo..OO O.  OO O
+ O O O    O O    O O o  O O .  O O O
+ OO   OOOO   OOOO   OOOO   OOOO   OO
+
+        OO     OO     OO     OO
+        OO     OO     OO     OO

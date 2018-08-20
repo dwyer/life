@@ -1,0 +1,14 @@
+# description: <a href="http://en.wikipedia.org/wiki/Oscillator_(cellular_automaton)">Kok's galaxy</a>
+
+      ....
+  OO OooooO
+ .oo OooooO
+ .oo  ..
+ .oo.    OO
+ .oo.   .oo.
+  OO    .oo.
+     ..  oo.
+  OooooO oo.
+  OooooO OO
+   ....
+            .

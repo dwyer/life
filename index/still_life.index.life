@@ -1,0 +1,28 @@
+# index: ** Still Life **
+#
+# file: Block         = block.life
+# file: Bi-block      = biblock.life
+# file: Beehive       = beehive.life
+# file: Honey Farm    = honeyfarm.life
+# file: Loaf          = loaf.life
+# file: Bi-loaf       = biloaf.life
+# file: Bakery        = bakery.life
+# file: Tub           = tub.life
+# file: Barge         = barge.life
+# file: Long Barge    = longbarge.life
+# file: Boat          = boat.life
+# file: Long Boat     = longboat.life
+# file: Ship          = ship.life
+# file: Long Ship     = longship.life
+# file: Boat Tie      = boattie.life
+# file: Ship Tie      = shiptie.life
+# file: Canoe         = canoe.life
+# file: Carrier       = carrier.life
+# file: Integral Sign = integral.life
+# file: Mango         = mango.life
+# file: Pond          = pond.life
+# file: Snake         = snake.life
+# file: Eater         = eater.life
+# file: Eater 2       = eater2.life
+#
+# file: Main Index... = index.life
