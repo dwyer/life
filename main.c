@@ -68,12 +68,12 @@ void update_cell(board_t from, board_t to, dim_t x, dim_t y)
     else
         set_cell(to, x, y, n == 3);
 
-    if (get_cell(from, x, y) && !get_cell(to, x, y))
-        set_cell(diff, x, y, -1);
-    else if (!get_cell(from, x, y) && get_cell(to, x, y))
-        set_cell(diff, x, y, 1);
-    else
-        set_cell(diff, x, y, 0);
+/*     if (get_cell(from, x, y) && !get_cell(to, x, y)) */
+/*         set_cell(diff, x, y, -1); */
+/*     else if (!get_cell(from, x, y) && get_cell(to, x, y)) */
+/*         set_cell(diff, x, y, 1); */
+/*     else */
+/*         set_cell(diff, x, y, 0); */
 }
 
 void update_board(board_t from, board_t to) {
