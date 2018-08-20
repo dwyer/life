@@ -86,7 +86,7 @@ void random_board(board_t board)
 {
     for (dim_t y = 0; y < h; ++y)
         for (dim_t x = 0; x < w; ++x)
-            if (!(rand() & 0xf))
+            if (!(rand() % 8))
                 set_cell(board, x, y, 1);
 }
 
