@@ -287,7 +287,7 @@ void zoom(const board_t src, board_t dst)
 int main(int argc, char *argv[])
 {
     bool pause = true;
-    int delay = 10;
+    int delay = 0;
     Uint32 startTime = 0;
     int frame = 0;
 
@@ -335,6 +335,7 @@ int main(int argc, char *argv[])
             SDL_WINDOW_SHOWN);
     SDL_Renderer *renderer;
     SDL_CreateWindowAndRenderer(w * SCALE, h * SCALE, 0, &window, &renderer);
+    SDL_GL_SetSwapInterval(1);
     startTime = SDL_GetTicks();
     while (1) {
         update_fg();
