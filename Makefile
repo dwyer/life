@@ -1,5 +1,10 @@
-life: main.c
-	cc -lsdl2 main.c -o life
+BIN=life.exe
 
-play: life
-	./life
+play: $(BIN)
+	./$<
+
+$(BIN): main.c
+	$(CC) -lsdl2 -o $@ $+
+
+clean:
+	$(RM) *.exe *.o
