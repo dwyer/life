@@ -328,13 +328,19 @@ int main(int argc, char *argv[])
     /* draw_cross(CURRENT_BOARD); */
 
     printf("ready\n");
+    const int WINDOW_W = w * SCALE;
+    const int WINDOW_H = h * SCALE;
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window *window = SDL_CreateWindow("Life",
             SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-            w * SCALE, h * SCALE,
+            WINDOW_W, WINDOW_H,
             SDL_WINDOW_SHOWN);
     SDL_Renderer *renderer;
-    SDL_CreateWindowAndRenderer(w * SCALE, h * SCALE, 0, &window, &renderer);
+    SDL_CreateWindowAndRenderer(WINDOW_W, WINDOW_H, 0, &window, &renderer);
+#if __APPLE__
+    SDL_PumpEvents();
+    SDL_SetWindowSize(window, WINDOW_W, WINDOW_H);
+#endif
     SDL_GL_SetSwapInterval(1);
     startTime = SDL_GetTicks();
     while (1) {
